@@ -1,4 +1,7 @@
 function FindProxyForURL(url, host) {
-    // Sử dụng proxy cho tất cả các kết nối
-    return "PROXY 172.25.5.20:3128";
+    if (isInNet(myIpAddress(), "172.25.8.0", "255.255.255.0")) {
+        return "PROXY your_proxy_server_address:port";
+    } else {
+        return "DIRECT";
+    }
 }
